@@ -6,7 +6,7 @@ App({
       userId: null // 全局存储userId
     },
     login() {
-      // 1. 获取微信临时code
+      // 1. 获取微信临时code，11111111
       wx.login({
         success: (res) => {
           const code = res.code;
