@@ -1,0 +1,59 @@
+<view class="container">
+  <!-- 用户信息区 -->
+  <view class="user-info-card">
+    <view class="avatar-container">
+      <image class="avatar" src="/images/others/avatar.png" mode="aspectFill"></image>
+    </view>
+    <text class="nickname">用户{{userId}}</text>
+  </view>
+
+  <!-- 我的发布 -->
+  <view class="mine-section">
+    <view class="section-header">
+      <text class="section-title">我的发布</text>
+      <view class="section-status">
+        <text wx:if="{{loadingItems}}" class="status-text">加载中...</text>
+        <text wx:elif="{{errorItems}}" class="status-text error" bindtap="reloadData">加载失败，点击重试</text>
+        <text wx:elif="{{myItems.length === 0}}" class="status-text empty">暂无发布</text>
+      </view>
+    </view>
+    
+    <view class="item-list" wx:if="{{!loadingItems && !errorItems && myItems.length > 0}}">
+      <block wx:for="{{myItems}}" wx:key="id">
+        <view class="item-card" bindtap="goDetail" data-id="{{item.id}}">
+          <view class="item-info">
+            <text class="item-title">{{item.title}}</text>
+            <text class="item-price">¥{{item.currentPrice}}</text>
+          </view>
+          <text class="item-status {{item.status === 'ongoing' ? 'status-ongoing' : 'status-closed'}}">
+            {{item.status === 'ongoing' ? '竞拍中' : '已结束'}}
+          </text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 我的出价 -->
+  <view class="mine-section">
+    <view class="section-header">
+      <text class="section-title">我的出价</text>
+      <view class="section-status">
+        <text wx:if="{{loadingBids}}" class="status-text">加载中...</text>
+        <text wx:elif="{{errorBids}}" class="status-text error" bindtap="reloadData">加载失败，点击重试</text>
+        <text wx:elif="{{myBids.length === 0}}" class="status-text empty">暂无出价</text>
+      </view>
+    </view>
+    
+    <view class="item-list" wx:if="{{!loadingBids && !errorBids && myBids.length > 0}}">
+      <block wx:for="{{myBids}}" wx:key="id">
+        <view class="item-card" bindtap="goDetail" data-id="{{item.itemId}}">
+          <view class="item-info">
+            <text class="item-title">商品{{item.itemId}}</text>
+            <text class="item-price">出价: ¥{{item.price}}</text>
+          </view>
+          <text class="item-time">{{item.createTime}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>    

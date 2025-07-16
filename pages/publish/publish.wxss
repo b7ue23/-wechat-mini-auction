@@ -1,0 +1,72 @@
+.publish-container {
+    padding: 20rpx;
+  }
+  
+  .form-group {
+    margin-bottom: 30rpx;
+  }
+  
+  .label {
+    display: block;
+    font-size: 28rpx;
+    color: #333;
+    margin-bottom: 10rpx;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 20rpx;
+    border: 1px solid #eee;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+  }
+  
+  textarea {
+    height: 150rpx;
+  }
+  
+  .upload-btn {
+    margin-top: 10rpx;
+    padding: 20rpx;
+    background: #f5f5f5;
+    border-radius: 8rpx;
+    text-align: center;
+    font-size: 26rpx;
+  }
+  
+  .preview-container {
+    margin-top: 20rpx;
+    height: 300rpx;
+    border-radius: 8rpx;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .publish-btn {
+    background: #1aad19;
+    color: #fff;
+    font-size: 30rpx;
+    padding: 25rpx 0;
+    margin-top: 50rpx;
+  }
+  
+  /* 新增：时间选择区域样式 */
+  .datetime-picker {
+    padding: 20rpx;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    color: #333;
+    margin-top: 10rpx;
+    cursor: pointer; /* 提示可点击 */
+  }

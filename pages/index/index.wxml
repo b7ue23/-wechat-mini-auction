@@ -1,0 +1,20 @@
+<!-- 首页商品列表（已删除底部发布按钮，修正默认图片路径） -->  
+<view class="container">  
+  <!-- 顶部标题 -->  
+  <view class="title">热门拍卖商品</view>  
+
+  <!-- 商品列表（循环渲染） -->  
+  <view class="item-list">  
+    <block wx:for="{{itemList}}" wx:key="id">  
+      <view class="item" bindtap="goDetail" data-id="{{item.id}}">  
+        <!-- 商品图片（修正默认图路径为小程序本地静态资源） -->  
+        <image class="item-img" src="{{item.imageUrl || '/static/images/default.png'}}"></image>  
+        <view class="item-info">  
+          <text class="item-title">{{item.title}}</text>  
+          <text class="item-price">当前价：¥{{item.currentPrice}}</text>  
+          <text class="item-time">剩余时间：{{item.remainTime}}</text>  
+        </view>  
+      </view>  
+    </block>  
+  </view>  
+</view>
